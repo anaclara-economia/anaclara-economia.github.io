@@ -1,0 +1,27 @@
+node_modules/
+dist/
+.astro/
+.vercel/
+.tools/
+astro-dev*.log
+.DS_Store
+
+# Materiais locais e documentos pessoais que não pertencem ao site público
+.agents/
+curriculo/
+00_contexto/
+01_planejamento/
+02_conteudo/
+03_midia/
+04_links/
+05_tecnico/
+
+# Rascunhos editoriais ainda não validados para publicação
+src/content/blog/2026-05-01-estrategia-empirica-em-economia-aplicada.md
+src/content/pesquisas/dinamica-e-mudanca-estrutural-brasil.md
+src/content/projetos/painel-regional-produtividade.md
+src/content/tutoriais/guia-curto-de-replicacao.md
+
+# Configuração legada preservada localmente durante a migração
+vercel.json
+.github/workflows/deploy-vercel.yml

@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Início"
+  description="Site acadêmico de Ana Clara Cabral sobre Economia Aplicada, desenvolvimento regional e análise de dados."
+>
+  <section class="home-profile">
+    <div>
+      <h1>Ana Clara Cabral</h1>
+      <p class="profile-kicker">Economia Aplicada · Desenvolvimento regional · Análise de dados</p>
+      <ul class="about-links" aria-label="Perfis acadêmicos">
+        <li><a href="https://lattes.cnpq.br/9701201405869987">Lattes</a></li>
+        <li><a href="https://orcid.org/0000-0002-7592-4385">ORCID</a></li>
+        <li><a href="https://www.linkedin.com/in/ana-clara-santos-cabral/">LinkedIn</a></li>
+        <li><a href="https://github.com/anaclara-economia">GitHub</a></li>
+        <li><a href="https://www.olaped.com.br/">LAPED</a></li>
+      </ul>
+      <p>
+        Economista pela Universidade Federal do Pará, especialista em Gestão e Análise Estratégica
+        de Dados pela PUC Minas e mestranda em Economia Aplicada na UFPA.
+      </p>
+      <p>
+        Minha agenda de pesquisa reúne desenvolvimento regional, sustentabilidade, políticas
+        públicas e métodos de análise de dados aplicados à economia. Este site apresentará
+        projetos, notas metodológicas e materiais técnicos à medida que estiverem prontos para
+        divulgação.
+      </p>
+    </div>
+    <div class="profile-media">
+      <img src="/profile-mark.svg" alt="" width="240" height="240" />
+    </div>
+  </section>
+
+  <section class="home-section">
+    <h2>Interesses de pesquisa</h2>
+    <ul class="plain-list">
+      <li>Taxonomia Sustentável Brasileira e economia ambiental.</li>
+      <li>Desenvolvimento regional, aglomerações produtivas locais e políticas públicas.</li>
+      <li>Automação de rotinas de dados com SQL, Python e R.</li>
+      <li>Modelos empíricos e replicabilidade em Economia Aplicada.</li>
+    </ul>
+  </section>
+
+  <section class="home-section">
+    <h2>Navegação</h2>
+    <p>
+      Consulte a página <a href="/sobre">Sobre</a> para conhecer minha trajetória acadêmica.
+      As áreas de <a href="/pesquisa">Pesquisa</a>, <a href="/modelos-e-codigo">Modelos e Código</a>
+      e <a href="/blog">Blog</a> serão atualizadas gradualmente.
+    </p>
+  </section>
+</BaseLayout>

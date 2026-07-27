@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getEntry, render } from "astro:content";
+
+const sobrePage = await getEntry("paginas", "sobre");
+
+if (!sobrePage) {
+  throw new Error("Conteúdo 'sobre' não encontrado em src/content/paginas/sobre.md");
+}
+
+const { Content } = await render(sobrePage);
+---
+
+<BaseLayout
+  title="Sobre"
+  description="Formação, interesses de pesquisa e trajetória acadêmica de Ana Clara Cabral."
+>
+  <section class="hero">
+    <h1>Sobre</h1>
+  </section>
+
+  <section class="panel prose">
+    <Content />
+  </section>
+</BaseLayout>

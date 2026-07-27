@@ -1,0 +1,41 @@
+---
+const menu = [
+  { href: "/", label: "Início" },
+  { href: "/sobre", label: "Sobre" },
+  { href: "/pesquisa", label: "Pesquisa" },
+  { href: "/modelos-e-codigo", label: "Modelos e Código" },
+  { href: "/blog", label: "Blog" },
+  { href: "/contato", label: "Contato" }
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <div class="nav-shell">
+    <a class="brand" href="/">
+      <span>Ana Clara Cabral</span>
+      <small>Economia Aplicada</small>
+    </a>
+    <nav class="site-nav" aria-label="Principal">
+      {
+        menu.map((item) => {
+          const isActive =
+            item.href === "/"
+              ? currentPath === "/"
+              : currentPath === item.href || currentPath.startsWith(`${item.href}/`);
+
+          return (
+            <a
+              class={isActive ? "active" : undefined}
+              href={item.href}
+              aria-current={isActive ? "page" : undefined}
+            >
+              {item.label}
+            </a>
+          );
+        })
+      }
+    </nav>
+  </div>
+</header>

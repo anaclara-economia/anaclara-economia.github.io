@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const statusOrder = {
+  em_andamento: 0,
+  submetido: 1,
+  publicado: 2
+};
+
+const statusLabel = {
+  em_andamento: "Em andamento",
+  submetido: "Submetido",
+  publicado: "Publicado"
+};
+
+const pesquisas = (await getCollection("pesquisas"))
+  .filter((item) => !item.data.draft)
+  .sort((a, b) => {
+    const orderA = statusOrder[a.data.status];
+    const orderB = statusOrder[b.data.status];
+    if (orderA !== orderB) return orderA - orderB;
+    return a.data.title.localeCompare(b.data.title);
+  });
+---
+
+<BaseLayout
+  title="Pesquisa"
+  description="Agenda pública de pesquisa de Ana Clara Cabral em Economia Aplicada."
+  sidebarItems={pesquisas.length > 0 ? [{ href: "#agenda-de-pesquisa", label: "Agenda de pesquisa" }] : []}
+>
+  <section class="hero">
+    <h1>Pesquisa</h1>
+    <p>Linhas de pesquisa, perguntas empíricas, recorte de dados e estratégia metodológica.</p>
+  </section>
+
+  <section id="agenda-de-pesquisa" class="panel">
+    <h2>Agenda de pesquisa</h2>
+    {
+      pesquisas.length > 0 ? (
+        <ul class="publication-list">
+          {
+        pesquisas.map((item) => (
+          <li>
+            <p>
+              <strong>{item.data.title}.</strong> {item.data.question} <em>{statusLabel[item.data.status]}.</em>
+            </p>
+            <p>
+              Recorte: {item.data.geography}, {item.data.period} ({item.data.level}). Método:{" "}
+              {item.data.method} Base de dados: {item.data.dataSource}
+              {item.data.link && <> <a href={item.data.link}>Link externo</a>.</>}
+            </p>
+          </li>
+        ))
+          }
+        </ul>
+      ) : (
+        <p class="empty-state">Conteúdo em preparação.</p>
+      )
+    }
+  </section>
+</BaseLayout>

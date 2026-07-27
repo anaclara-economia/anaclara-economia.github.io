@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const projetos = (await getCollection("projetos"))
+  .filter((item) => !item.data.draft)
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+const tutoriais = (await getCollection("tutoriais"))
+  .filter((item) => !item.data.draft)
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+const sidebarItems = [
+  ...(projetos.length > 0 ? [{ href: "#projetos", label: "Projetos" }] : []),
+  ...(tutoriais.length > 0 ? [{ href: "#tutoriais", label: "Tutoriais" }] : [])
+];
+---
+
+<BaseLayout
+  title="Modelos e Código"
+  description="Projetos, códigos e materiais replicáveis de Ana Clara Cabral."
+  sidebarItems={sidebarItems}
+>
+  <section class="hero">
+    <h1>Modelos e Código</h1>
+    <p>Projetos aplicados, rotinas replicáveis e tutoriais técnicos para pesquisa empírica.</p>
+  </section>
+
+  <section id="projetos" class="panel">
+    <h2>Projetos</h2>
+    {
+      projetos.length > 0 ? (
+        <ul class="publication-list">
+          {
+        projetos.map((item) => (
+          <li>
+            <p>
+              <strong>{item.data.title}.</strong> {item.data.problem}
+            </p>
+            <p>
+              Dados: {item.data.dataset} Ferramentas: {item.data.tool.join(", ")}.
+              Resultado principal: {item.data.result}
+            </p>
+            {(item.data.replicationNotes || item.data.repository) && (
+              <p>
+                {item.data.replicationNotes && <>Replicação: {item.data.replicationNotes} </>}
+                {item.data.repository && <a href={item.data.repository}>Repositório</a>}
+              </p>
+            )}
+          </li>
+        ))
+          }
+        </ul>
+      ) : (
+        <p class="empty-state">Conteúdo em preparação.</p>
+      )
+    }
+  </section>
+
+  <section id="tutoriais" class="panel">
+    <h2>Tutoriais</h2>
+    {
+      tutoriais.length > 0 ? (
+        <ul class="publication-list">
+          {
+        tutoriais.map((item) => (
+          <li>
+            <p>
+              <strong>{item.data.title}.</strong> {item.data.objective}
+            </p>
+            <p>
+              Formato: {item.data.format}. Público: {item.data.audience}
+              {item.data.supportMaterial && <> Material de apoio: {item.data.supportMaterial}</>}
+            </p>
+          </li>
+        ))
+          }
+        </ul>
+      ) : (
+        <p class="empty-state">Conteúdo em preparação.</p>
+      )
+    }
+  </section>
+</BaseLayout>

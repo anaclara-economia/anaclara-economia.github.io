@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog"))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+const formatDate = (date: Date) =>
+  new Intl.DateTimeFormat("pt-BR", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    timeZone: "UTC"
+  }).format(date);
+---
+
+<BaseLayout
+  title="Blog"
+  description="Notas e textos de Ana Clara Cabral sobre Economia Aplicada e métodos de pesquisa."
+  sidebarItems={posts.length > 0 ? [{ href: "#publicacoes", label: "Publicações" }] : []}
+>
+  <section class="hero">
+    <h1>Blog</h1>
+    <p>Análises econômicas, notas metodológicas e textos de pesquisa aplicada.</p>
+  </section>
+
+  <section id="publicacoes" class="panel">
+    <h2>Publicações</h2>
+    {
+      posts.length > 0 ? (
+        <ul class="publication-list">
+          {
+        posts.map((post) => (
+          <li>
+            <p>
+              <strong><a href={`/blog/${post.id}`}>{post.data.title}</a>.</strong>{" "}
+              {post.data.summary}
+            </p>
+            <p class="meta">{formatDate(post.data.pubDate)}</p>
+            {post.data.tags.length > 0 && <p class="meta">Tags: {post.data.tags.join(", ")}</p>}
+          </li>
+        ))
+          }
+        </ul>
+      ) : (
+        <p class="empty-state">Conteúdo em preparação.</p>
+      )
+    }
+  </section>
+</BaseLayout>

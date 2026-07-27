@@ -1,0 +1,19 @@
+---
+interface Props {
+  items: Array<{
+    href: string;
+    label: string;
+  }>;
+}
+
+const { items } = Astro.props;
+---
+
+<aside class="page-sidebar" aria-label="Sumário da página">
+  <nav class="toc">
+    <h2>Nesta página</h2>
+    <ul>
+      {items.map((section) => <li><a href={section.href}>{section.label}</a></li>)}
+    </ul>
+  </nav>
+</aside>
