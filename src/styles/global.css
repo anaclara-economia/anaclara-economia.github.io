@@ -340,6 +340,27 @@ h3 {
   list-style: disc;
 }
 
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.tool-group {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.9rem 1rem;
+}
+
+.tool-group h3 {
+  margin-bottom: 0.3rem;
+}
+
+.tool-group p {
+  color: var(--muted);
+  margin: 0;
+}
+
 .resource-list {
   list-style: none;
   margin: 0;
@@ -471,6 +492,10 @@ h3 {
 
   .profile-media img {
     width: 11rem;
+  }
+
+  .tool-grid {
+    grid-template-columns: 1fr;
   }
 }
 

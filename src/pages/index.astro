@@ -4,12 +4,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout
   title="Início"
-  description="Site acadêmico de Ana Clara Cabral sobre Economia Aplicada, desenvolvimento regional e análise de dados."
+  description="Site acadêmico de Ana Clara Cabral sobre Economia Aplicada, ciência de dados e agentes de IA."
 >
   <section class="home-profile">
     <div>
       <h1>Ana Clara Cabral</h1>
-      <p class="profile-kicker">Economia Aplicada · Desenvolvimento regional · Análise de dados</p>
+      <p class="profile-kicker">Economia Aplicada · Ciência de dados · Agentes de IA</p>
       <ul class="about-links" aria-label="Perfis acadêmicos">
         <li><a href="https://lattes.cnpq.br/9701201405869987">Lattes</a></li>
         <li><a href="https://orcid.org/0000-0002-7592-4385">ORCID</a></li>
@@ -18,14 +18,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <li><a href="https://www.olaped.com.br/">LAPED</a></li>
       </ul>
       <p>
-        Economista pela Universidade Federal do Pará, especialista em Gestão e Análise Estratégica
-        de Dados pela PUC Minas e mestranda em Economia Aplicada na UFPA.
+        Economista (CORECON-PA/AP nº 41301), formada pela Universidade Federal do Pará,
+        especialista em Gestão e Análise Estratégica de Dados pela PUC Minas e mestranda em
+        Economia Aplicada na UFPA. É pesquisadora bolsista da Cátedra Escolhas de Economia e
+        Meio Ambiente – Instituto Escolhas e integra o LAPED/CNPq.
       </p>
       <p>
-        Minha agenda de pesquisa reúne desenvolvimento regional, sustentabilidade, políticas
-        públicas e métodos de análise de dados aplicados à economia. Este site apresentará
-        projetos, notas metodológicas e materiais técnicos à medida que estiverem prontos para
-        divulgação.
+        Atua com pesquisa quantitativa, modelagem de dados e uso crítico de agentes de IA. Sua
+        pesquisa de mestrado investiga as aglomerações produtivas locais verdes a partir da
+        Taxonomia Sustentável Brasileira, sob uma perspectiva territorial e regional.
       </p>
     </div>
     <div class="profile-media">
@@ -34,21 +35,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </section>
 
   <section class="home-section">
-    <h2>Interesses de pesquisa</h2>
-    <ul class="plain-list">
-      <li>Taxonomia Sustentável Brasileira e economia ambiental.</li>
-      <li>Desenvolvimento regional, aglomerações produtivas locais e políticas públicas.</li>
-      <li>Automação de rotinas de dados com SQL, Python e R.</li>
-      <li>Modelos empíricos e replicabilidade em Economia Aplicada.</li>
-    </ul>
-  </section>
-
-  <section class="home-section">
-    <h2>Navegação</h2>
-    <p>
-      Consulte a página <a href="/sobre">Sobre</a> para conhecer minha trajetória acadêmica.
-      As áreas de <a href="/pesquisa">Pesquisa</a>, <a href="/modelos-e-codigo">Modelos e Código</a>
-      e <a href="/blog">Blog</a> serão atualizadas gradualmente.
-    </p>
+    <h2>Ferramentas e linguagens</h2>
+    <div class="tool-grid">
+      <div class="tool-group">
+        <h3>Programação e dados</h3>
+        <p>Python · R · SQL</p>
+      </div>
+      <div class="tool-group">
+        <h3>Visualização e BI</h3>
+        <p>Power BI · Tableau · Dashboards</p>
+      </div>
+      <div class="tool-group">
+        <h3>IA e automação</h3>
+        <p>Codex · LLMs · Agentes de IA</p>
+      </div>
+    </div>
   </section>
 </BaseLayout>

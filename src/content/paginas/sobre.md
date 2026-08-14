@@ -1,14 +1,30 @@
 ---
 title: Sobre
-updatedAt: 2026-07-27
+updatedAt: 2026-08-14
 ---
 
-Tenho formação em Economia pela Universidade Federal do Pará (UFPA, 2022) e especialização em Gestão e Análise Estratégica de Dados pela PUC Minas (2026). Atualmente curso o Mestrado Profissional em Economia Aplicada no Programa de Pós-Graduação em Economia Aplicada da UFPA.
+## Formação e atuação
 
-Minha agenda de pesquisa articula Economia Aplicada, desenvolvimento regional, Taxonomia Sustentável Brasileira, aglomerações produtivas locais, políticas públicas e ciência de dados aplicada à economia. O trabalho combina revisão bibliográfica, organização de bases de dados, tratamento de grandes volumes de informação e construção de rotinas reprodutíveis para análise empírica.
+Ana Clara Cabral é economista (CORECON-PA/AP nº 41301), formada pela Universidade Federal do Pará (UFPA, 2022), especialista em Gestão e Análise Estratégica de Dados pela PUC Minas (2026) e mestranda no Programa de Pós-Graduação em Economia Aplicada da UFPA.
 
-Minha formação e meus projetos acadêmicos incluem o uso de SQL, Python e R em processos de organização, tratamento e análise de dados, sempre com atenção à documentação dos procedimentos, à replicabilidade e à consistência metodológica.
+É pesquisadora bolsista da Cátedra Escolhas de Economia e Meio Ambiente – Instituto Escolhas. Integra o Laboratório de Política Econômica e Desenvolvimento Produtivo (LAPED/CNPq), onde desenvolve pesquisas quantitativas e projetos orientados por dados.
 
-Participo do Laboratório de Pesquisa em Política Econômica e Desenvolvimento Produtivo (LAPED). Mais informações sobre o laboratório estão disponíveis em [olaped.com.br](https://www.olaped.com.br/).
+## Trajetória acadêmica
 
-Meu currículo Lattes está disponível em [lattes.cnpq.br/9701201405869987](https://lattes.cnpq.br/9701201405869987). Este site complementa o currículo formal e será atualizado à medida que projetos acadêmicos, materiais técnicos e notas de pesquisa estiverem prontos para divulgação.
+Durante a graduação, participou de projetos de iniciação científica entre 2019 e 2021, com atividades relacionadas à modelagem macroeconômica e aos métodos quantitativos em Economia.
+
+Entre 2020 e 2021, atuou como estagiária e pesquisadora bolsista no projeto *Construção de Modelos de Projeções de Indicadores Econômicos* (Projeto 4071 – Banpará/UFPA/FADESP). O trabalho abordou as relações entre sistema financeiro, oferta de crédito, atividade produtiva, emprego e desenvolvimento regional, com atuação em pesquisa econômica aplicada, levantamento e organização de dados e apoio à aplicação de matriz insumo-produto, Credit Scoring, Behaviour Scoring, Propensity Score Matching e controle sintético.
+
+## Pesquisa atual
+
+No mestrado, desenvolve o projeto *Aglomerações Produtivas Locais Verdes: uma abordagem territorial baseada na Taxonomia Sustentável Brasileira*, sob orientação do Prof. Dr. Wallace Marcelino Pereira. Seus interesses de pesquisa incluem Economia Aplicada ao setor público, macroeconomia, finanças públicas e desenvolvimento regional.
+
+## Dados e inteligência artificial
+
+Sua atuação combina ciência de dados, modelagem quantitativa e construção de rotinas reprodutíveis em Python, R e SQL. Utiliza Power BI e Tableau para visualização e comunicação de resultados.
+
+Desde 2024, emprega LLMs e agentes de IA, incluindo o Codex, em atividades de pesquisa bibliográfica, organização de fontes, documentação e automação de etapas da coleta e do tratamento de dados, com revisão crítica e responsabilidade humana sobre as decisões metodológicas.
+
+## Perfis públicos
+
+Mais informações estão disponíveis no [LAPED](https://www.olaped.com.br/) e no [Currículo Lattes](https://lattes.cnpq.br/9701201405869987). Este site complementa o currículo formal com projetos, materiais técnicos e notas de pesquisa preparados para divulgação pública.
