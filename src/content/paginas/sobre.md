@@ -24,7 +24,3 @@ No mestrado, desenvolve o projeto *Aglomerações Produtivas Locais Verdes: uma 
 Sua atuação combina ciência de dados, modelagem quantitativa e construção de rotinas reprodutíveis em Python, R e SQL. Utiliza Power BI e Tableau para visualização e comunicação de resultados.
 
 Desde 2024, emprega LLMs e agentes de IA, incluindo o Codex, em atividades de pesquisa bibliográfica, organização de fontes, documentação e automação de etapas da coleta e do tratamento de dados, com revisão crítica e responsabilidade humana sobre as decisões metodológicas.
-
-## Perfis públicos
-
-Mais informações estão disponíveis no [LAPED](https://www.olaped.com.br/) e no [Currículo Lattes](https://lattes.cnpq.br/9701201405869987). Este site complementa o currículo formal com projetos, materiais técnicos e notas de pesquisa preparados para divulgação pública.
