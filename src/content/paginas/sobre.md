@@ -7,7 +7,7 @@ updatedAt: 2026-08-14
 
 Ana Clara Cabral é economista (CORECON-PA/AP nº 41301), formada pela Universidade Federal do Pará (UFPA, 2022), especialista em Gestão e Análise Estratégica de Dados pela PUC Minas (2026) e mestranda no Programa de Pós-Graduação em Economia Aplicada da UFPA.
 
-É pesquisadora bolsista da Cátedra Escolhas de Economia e Meio Ambiente – Instituto Escolhas. Integra o Laboratório de Política Econômica e Desenvolvimento Produtivo (LAPED/CNPq), onde desenvolve pesquisas quantitativas e projetos orientados por dados.
+É pesquisadora bolsista da <a href="https://escolhas.org/catedra/" target="_blank" rel="noopener noreferrer">Cátedra Escolhas de Economia e Meio Ambiente – Instituto Escolhas</a>. Integra o <a href="https://www.olaped.com.br/" target="_blank" rel="noopener noreferrer">Laboratório de Política Econômica e Desenvolvimento Produtivo (LAPED/CNPq)</a>, onde desenvolve pesquisas quantitativas e projetos orientados por dados.
 
 ## Trajetória acadêmica
 
@@ -17,7 +17,7 @@ Entre 2020 e 2021, atuou como estagiária e pesquisadora bolsista no projeto *Co
 
 ## Pesquisa atual
 
-No mestrado, desenvolve o projeto *Aglomerações Produtivas Locais Verdes: uma abordagem territorial baseada na Taxonomia Sustentável Brasileira*, sob orientação do Prof. Dr. Wallace Marcelino Pereira. Seus interesses de pesquisa incluem Economia Aplicada ao setor público, macroeconomia, finanças públicas e desenvolvimento regional.
+No mestrado, desenvolve o projeto *Aglomerações Produtivas Locais Verdes: uma abordagem territorial baseada na Taxonomia Sustentável Brasileira*, sob orientação do <a href="https://lattes.cnpq.br/5968623382148179" target="_blank" rel="noopener noreferrer">Prof. Dr. Wallace Marcelino Pereira</a>. Seus interesses de pesquisa incluem Economia Aplicada ao setor público, macroeconomia, finanças públicas e desenvolvimento regional.
 
 ## Dados e inteligência artificial
 
