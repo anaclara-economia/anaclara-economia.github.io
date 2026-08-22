@@ -229,7 +229,9 @@ body > .page-shell {
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5 {
   color: var(--text);
   font-weight: 650;
   line-height: 1.2;
@@ -254,6 +256,16 @@ h2 {
 h3 {
   font-size: 1.05rem;
   margin: 0 0 0.35rem;
+}
+
+h4 {
+  font-size: 1rem;
+  margin: 1.7rem 0 0.75rem;
+}
+
+h5 {
+  font-size: 1.05rem;
+  margin: 1.3rem 0 0.4rem;
 }
 
 .home-profile {
@@ -419,6 +431,11 @@ h3 {
 
 .prose > :first-child {
   margin-top: 0;
+}
+
+.prose a {
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
 }
 
 .prose h1 {
