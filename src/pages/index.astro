@@ -40,12 +40,10 @@ const trabalhos = (await getCollection("pesquisas"))
   </section>
 
   <section class="home-section selected-work">
-    <div class="section-heading">
-      <div>
+    <details class="publication-disclosure">
+      <summary>
         <h2>Produção acadêmica</h2>
-      </div>
-      <a href="/pesquisa">Ver todos</a>
-    </div>
+      </summary>
     <div class="publication-stack publication-stack--home">
       {
         trabalhos.map((item) => (
@@ -62,6 +60,8 @@ const trabalhos = (await getCollection("pesquisas"))
         ))
       }
     </div>
+    </details>
+    <a class="selected-work-all" href="/pesquisa">Ver todos</a>
   </section>
 
   <section class="home-section tools-section">
