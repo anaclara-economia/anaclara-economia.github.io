@@ -1,62 +1,54 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PublicationItem from "../components/PublicationItem.astro";
 import { getCollection } from "astro:content";
 
-const statusOrder = {
-  em_andamento: 0,
-  submetido: 1,
-  publicado: 2
-};
-
-const statusLabel = {
-  em_andamento: "Em andamento",
-  submetido: "Submetido",
-  publicado: "Publicado"
-};
-
 const pesquisas = (await getCollection("pesquisas"))
-  .filter((item) => !item.data.draft)
-  .sort((a, b) => {
-    const orderA = statusOrder[a.data.status];
-    const orderB = statusOrder[b.data.status];
-    if (orderA !== orderB) return orderA - orderB;
-    return a.data.title.localeCompare(b.data.title);
-  });
+  .filter((item) => !item.data.draft && item.data.kind && item.data.authors && item.data.venue && item.data.summary)
+  .sort((a, b) => a.data.order - b.data.order);
+
+const workingPapers = pesquisas.filter((item) => item.data.kind === "working_paper");
+const anais = pesquisas.filter((item) => item.data.kind === "anais");
 ---
 
 <BaseLayout
   title="Pesquisa"
-  description="Agenda pública de pesquisa de Ana Clara Cabral em Economia Aplicada."
-  sidebarItems={pesquisas.length > 0 ? [{ href: "#agenda-de-pesquisa", label: "Agenda de pesquisa" }] : []}
+  description="Produção acadêmica e pesquisa em andamento de Ana Clara Cabral em Economia Aplicada."
+  sidebarItems={[
+    { href: "#working-papers", label: "Working papers" },
+    { href: "#anais", label: "Publicações em anais" },
+    { href: "#em-andamento", label: "Em andamento" }
+  ]}
 >
   <section class="hero">
     <h1>Pesquisa</h1>
-    <p>Linhas de pesquisa, perguntas empíricas, recorte de dados e estratégia metodológica.</p>
+    <p>Trabalhos sobre financiamento, estrutura produtiva, desenvolvimento regional e análise territorial.</p>
   </section>
 
-  <section id="agenda-de-pesquisa" class="panel">
-    <h2>Agenda de pesquisa</h2>
-    {
-      pesquisas.length > 0 ? (
-        <ul class="publication-list">
-          {
-        pesquisas.map((item) => (
-          <li>
-            <p>
-              <strong>{item.data.title}.</strong> {item.data.question} <em>{statusLabel[item.data.status]}.</em>
-            </p>
-            <p>
-              Recorte: {item.data.geography}, {item.data.period} ({item.data.level}). Método:{" "}
-              {item.data.method} Base de dados: {item.data.dataSource}
-              {item.data.link && <> <a href={item.data.link}>Link externo</a>.</>}
-            </p>
-          </li>
-        ))
-          }
-        </ul>
-      ) : (
-        <p class="empty-state">Conteúdo em preparação.</p>
-      )
-    }
+  <section id="working-papers" class="panel research-section">
+    <h2>Working papers</h2>
+    <div class="publication-stack">
+      {workingPapers.map((item) => <PublicationItem title={item.data.title} authors={item.data.authors!} venue={item.data.venue!} year={item.data.year} summary={item.data.summary!} pageUrl={item.data.pageUrl} pdfUrl={item.data.pdfUrl} pages={item.data.pages} />)}
+    </div>
+  </section>
+
+  <section id="anais" class="panel research-section">
+    <h2>Publicações em anais</h2>
+    <div class="publication-stack">
+      {anais.map((item) => <PublicationItem title={item.data.title} authors={item.data.authors!} venue={item.data.venue!} year={item.data.year} summary={item.data.summary!} pageUrl={item.data.pageUrl} pdfUrl={item.data.pdfUrl} pages={item.data.pages} />)}
+    </div>
+  </section>
+
+  <section id="em-andamento" class="panel research-section">
+    <h2>Pesquisa em andamento</h2>
+    <article class="current-research">
+      <p class="publication-meta">Dissertação de mestrado · PPGEA/UFPA</p>
+      <h3>Aglomerações Produtivas Locais Verdes: uma abordagem territorial baseada na Taxonomia Sustentável Brasileira</h3>
+      <p>
+        A pesquisa investiga a formação e a distribuição territorial de aglomerações produtivas
+        locais potenciais em atividades econômicas elegíveis pela Taxonomia Sustentável Brasileira,
+        com foco nas indústrias extrativas e de transformação no Brasil.
+      </p>
+    </article>
   </section>
 </BaseLayout>

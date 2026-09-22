@@ -1,0 +1,14 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import BlogSidebar from "../components/BlogSidebar.astro";
+import type { BlogPost } from "../lib/blog";
+interface Props { title?: string; description?: string; posts: BlogPost[]; article?: boolean; }
+const { title = "Blog", description = "Blog de Ana Clara Cabral.", posts, article = false } = Astro.props;
+---
+<BaseLayout title={title} description={description}>
+  <header class="blog-masthead">
+    {article ? <a href="/blog/">Blog</a> : <h1>Blog</h1>}
+  </header>
+  <div class="blog-main"><slot /></div>
+  <BlogSidebar slot="sidebar" posts={posts} />
+</BaseLayout>

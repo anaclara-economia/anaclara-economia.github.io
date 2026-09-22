@@ -1,0 +1,32 @@
+---
+import { blogGroups, blogGroupURL, type BlogPost } from "../lib/blog";
+interface Props { posts: BlogPost[]; }
+const { categories, tags, archives } = blogGroups(Astro.props.posts);
+const currentPath = Astro.url.pathname.replace(/\/$/, "");
+const active = (path: string) => currentPath === blogGroupURL(path).replace(/\/$/, "") ? "page" : undefined;
+---
+
+<aside class="blog-sidebar" aria-label="Explorar o blog">
+  <section>
+    <h2>Categorias</h2>
+    <ul>
+      {categories.map((group) => <li>
+        {group.posts.length > 0
+          ? <a href={blogGroupURL(group.path)} aria-current={active(group.path)}>{group.label} <span class="blog-count">({group.posts.length})</span></a>
+          : <span class="blog-inactive">{group.label}</span>}
+      </li>)}
+    </ul>
+  </section>
+  <section>
+    <h2>Tags</h2>
+    {tags.length > 0 ? <ul class="blog-tag-list">
+      {tags.map((group) => <li><a href={blogGroupURL(group.path)} aria-current={active(group.path)}>{group.label}</a></li>)}
+    </ul> : <p>Disponíveis com os primeiros textos.</p>}
+  </section>
+  <section>
+    <h2>Arquivo</h2>
+    {archives.length > 0 ? <ul>
+      {archives.map((group) => <li><a href={blogGroupURL(group.path)} aria-current={active(group.path)}>{group.label} <span class="blog-count">({group.posts.length})</span></a></li>)}
+    </ul> : <p>Nenhum texto publicado.</p>}
+  </section>
+</aside>

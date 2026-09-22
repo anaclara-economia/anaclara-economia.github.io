@@ -1,53 +1,83 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PublicationItem from "../components/PublicationItem.astro";
+import { getCollection } from "astro:content";
+
+const trabalhos = (await getCollection("pesquisas"))
+  .filter((item) => !item.data.draft && item.data.featured && item.data.kind && item.data.authors && item.data.venue && item.data.summary)
+  .sort((a, b) => a.data.order - b.data.order);
 ---
 
 <BaseLayout
   title="Início"
-  description="Site acadêmico de Ana Clara Cabral sobre Economia Aplicada, ciência de dados e agentes de IA."
+  description="Site acadêmico de Ana Clara Cabral sobre Economia Aplicada, ciência de dados e política econômica."
 >
   <section class="home-profile">
     <div>
       <h1>Ana Clara Cabral</h1>
-      <p class="profile-kicker">Economia Aplicada · Ciência de dados · Agentes de IA</p>
+      <p class="profile-kicker">Economia Aplicada · Ciência de dados · Política econômica</p>
       <ul class="about-links" aria-label="Perfis acadêmicos">
-        <li><a href="https://lattes.cnpq.br/9701201405869987">Lattes</a></li>
-        <li><a href="https://orcid.org/0000-0002-7592-4385">ORCID</a></li>
-        <li><a href="https://www.linkedin.com/in/ana-clara-santos-cabral/">LinkedIn</a></li>
-        <li><a href="https://github.com/anaclara-economia">GitHub</a></li>
-        <li><a href="https://www.olaped.com.br/">LAPED</a></li>
+        <li><a href="https://lattes.cnpq.br/9701201405869987" target="_blank" rel="noopener noreferrer">Lattes</a></li>
+        <li><a href="https://orcid.org/0000-0002-7592-4385" target="_blank" rel="noopener noreferrer">ORCID</a></li>
+        <li><a href="https://www.linkedin.com/in/ana-clara-santos-cabral/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/anaclara-economia" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://www.olaped.com.br/" target="_blank" rel="noopener noreferrer">LAPED</a></li>
       </ul>
       <p>
         Economista (CORECON-PA/AP nº 41301), formada pela Universidade Federal do Pará,
-        especialista em Gestão e Análise Estratégica de Dados pela PUC Minas e mestranda em
-        Economia Aplicada na UFPA. É pesquisadora bolsista da Cátedra Escolhas de Economia e
-        Meio Ambiente – Instituto Escolhas e integra o LAPED/CNPq.
+        especialista em Gestão e Análise Estratégica de Dados pela PUC Minas e mestranda no
+        Programa de Pós-Graduação em Economia Aplicada da UFPA.
       </p>
       <p>
-        Atua com pesquisa quantitativa, modelagem de dados e uso crítico de agentes de IA. Sua
-        pesquisa de mestrado investiga as aglomerações produtivas locais verdes a partir da
-        Taxonomia Sustentável Brasileira, sob uma perspectiva territorial e regional.
+        Pesquisadora bolsista da Cátedra Escolhas de Economia e Meio Ambiente – Instituto
+        Escolhas e integrante do LAPED/CNPq. Atua com pesquisa econômica quantitativa,
+        desenvolvimento regional, análise de dados e uso crítico de agentes de IA.
       </p>
     </div>
     <div class="profile-media">
-      <img src="/profile-mark.svg" alt="" width="240" height="240" />
+      <img src="/ana-clara-cabral-perfil.png" alt="Retrato de Ana Clara Cabral" width="1254" height="1254" />
     </div>
   </section>
 
-  <section class="home-section">
+  <section class="home-section selected-work">
+    <div class="section-heading">
+      <div>
+        <h2>Produção acadêmica</h2>
+      </div>
+      <a href="/pesquisa">Ver todos</a>
+    </div>
+    <div class="publication-stack publication-stack--home">
+      {
+        trabalhos.map((item) => (
+          <PublicationItem
+            title={item.data.title}
+            authors={item.data.authors!}
+            venue={item.data.venue!}
+            year={item.data.year}
+            pages={item.data.pages}
+            summary={item.data.summary!}
+            pageUrl={item.data.pageUrl ?? item.data.pdfUrl}
+            compact
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="home-section tools-section">
     <h2>Ferramentas e linguagens</h2>
     <div class="tool-grid">
       <div class="tool-group">
-        <h3>Programação e dados</h3>
+        <h3>Linguagens</h3>
         <p>Python · R · SQL</p>
       </div>
       <div class="tool-group">
-        <h3>Visualização e BI</h3>
-        <p>Power BI · Tableau · Dashboards</p>
+        <h3>Visualização de dados e BI</h3>
+        <p>Power BI · Tableau · Metabase</p>
       </div>
       <div class="tool-group">
         <h3>IA e automação</h3>
-        <p>Codex · LLMs · Agentes de IA</p>
+        <p>Codex · Agentes de IA</p>
       </div>
     </div>
   </section>

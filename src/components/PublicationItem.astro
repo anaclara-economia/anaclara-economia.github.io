@@ -1,0 +1,59 @@
+---
+interface Props {
+  title: string;
+  authors: string[];
+  venue: string;
+  year?: number;
+  summary: string;
+  pageUrl?: string;
+  pdfUrl?: string;
+  pages?: string;
+  compact?: boolean;
+}
+
+const {
+  title,
+  authors,
+  venue,
+  year,
+  summary,
+  pageUrl,
+  pdfUrl,
+  pages,
+  compact = false
+} = Astro.props;
+
+const authorSelf = "Ana Clara dos Santos Cabral";
+---
+
+<article class:list={["publication-entry", compact && "publication-entry--compact"]}>
+  <h3>
+    {
+      pageUrl ? (
+        <a href={pageUrl} target="_blank" rel="noopener noreferrer">{title}</a>
+      ) : (
+        title
+      )
+    }
+  </h3>
+  <p class="publication-authors">
+    {
+      authors.map((author, index) => (
+        <>
+          <span class:list={[author === authorSelf && "author-self"]}>{author}</span>
+          {index < authors.length - 2 ? ", " : index === authors.length - 2 ? " e " : ""}
+        </>
+      ))
+    }
+  </p>
+  <p class="publication-meta">{venue}{year ? `, ${year}` : ""}{pages ? `, p. ${pages}` : ""}.</p>
+  <p>{summary}</p>
+  {
+    !compact && (pageUrl || pdfUrl) && (
+      <p class="publication-links">
+        {pageUrl && <a href={pageUrl} target="_blank" rel="noopener noreferrer">Página do trabalho</a>}
+        {pdfUrl && <a href={pdfUrl} target="_blank" rel="noopener noreferrer">PDF</a>}
+      </p>
+    )
+  }
+</article>

@@ -1,5 +1,6 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
+import { blogCategories } from "./lib/blog";
 
 const blog = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
@@ -7,6 +8,7 @@ const blog = defineCollection({
     title: z.string(),
     pubDate: z.coerce.date(),
     summary: z.string(),
+    category: z.enum(blogCategories).optional(),
     tags: z.array(z.string()).default([]),
     geography: z.string().optional(),
     period: z.string().optional(),
@@ -19,13 +21,23 @@ const pesquisas = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/pesquisas" }),
   schema: z.object({
     title: z.string(),
-    status: z.enum(["em_andamento", "submetido", "publicado"]),
-    question: z.string(),
-    geography: z.string(),
-    period: z.string(),
-    level: z.enum(["regional", "nacional", "internacional"]),
-    method: z.string(),
-    dataSource: z.string(),
+    kind: z.enum(["working_paper", "anais"]).optional(),
+    year: z.number().int().optional(),
+    authors: z.array(z.string()).min(1).optional(),
+    venue: z.string().optional(),
+    summary: z.string().optional(),
+    pageUrl: z.string().url().optional(),
+    pdfUrl: z.string().url().optional(),
+    pages: z.string().optional(),
+    featured: z.boolean().default(false),
+    order: z.number().int().default(0),
+    status: z.enum(["em_andamento", "submetido", "publicado"]).optional(),
+    question: z.string().optional(),
+    geography: z.string().optional(),
+    period: z.string().optional(),
+    level: z.enum(["regional", "nacional", "internacional"]).optional(),
+    method: z.string().optional(),
+    dataSource: z.string().optional(),
     link: z.string().url().optional(),
     draft: z.boolean().default(false)
   })

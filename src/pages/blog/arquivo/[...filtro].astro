@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+import BlogLayout from "../../../layouts/BlogLayout.astro";
+import BlogPostList from "../../../components/BlogPostList.astro";
+import { blogGroups, publicBlogPosts, type BlogPost } from "../../../lib/blog";
+
+export async function getStaticPaths() {
+  const posts = publicBlogPosts(await getCollection("blog"));
+  const groups = blogGroups(posts);
+  return [...groups.categories, ...groups.tags, ...groups.archives]
+    .filter((group) => group.posts.length > 0)
+    .map((group) => ({ params: { filtro: group.path }, props: { group, posts } }));
+}
+const { group, posts } = Astro.props as {
+  group: { label: string; posts: BlogPost[] }; posts: BlogPost[];
+};
+---
+<BlogLayout title={`${group.label} — Blog`} posts={posts}>
+  <div class="blog-filter-heading">
+    <h2>{group.label}</h2>
+    <a href="/blog/">Todos os textos</a>
+  </div>
+  <BlogPostList posts={group.posts} />
+</BlogLayout>

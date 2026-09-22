@@ -1,0 +1,19 @@
+---
+import { formatBlogDate, topicSlug, blogGroupURL, type BlogPost } from "../lib/blog";
+interface Props { posts: BlogPost[]; }
+const { posts } = Astro.props;
+---
+{posts.length === 0 ? <p class="blog-empty">Conteúdo em preparação.</p> : posts.map((post) => (
+  <article class="blog-entry">
+    <p class="blog-post-meta">
+      <time datetime={post.data.pubDate.toISOString().slice(0, 10)}>{formatBlogDate(post.data.pubDate)}</time>
+      {post.data.category && <> · <a href={blogGroupURL(`categoria/${topicSlug(post.data.category)}`)}>{post.data.category}</a></>}
+    </p>
+    <h2><a href={`/blog/${post.id}/`}>{post.data.title}</a></h2>
+    <p>{post.data.summary}</p>
+    {post.data.tags.length > 0 && <ul class="blog-tag-list" aria-label="Tags do texto">
+      {post.data.tags.map((tag) => <li><a href={blogGroupURL(`tag/${topicSlug(tag)}`)}>{tag}</a></li>)}
+    </ul>}
+    <a class="blog-read-more" href={`/blog/${post.id}/`} aria-label={`Continuar lendo: ${post.data.title}`}>Continuar lendo →</a>
+  </article>
+))}
