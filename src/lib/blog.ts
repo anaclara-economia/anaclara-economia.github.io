@@ -19,7 +19,7 @@ export const formatBlogDate = (date: Date) => new Intl.DateTimeFormat("pt-BR", {
 export const monthKey = (date: Date) => date.toISOString().slice(0, 7);
 
 export function publicBlogPosts(posts: BlogPost[]) {
-  return posts.filter((post) => !post.data.draft)
+  return posts.filter((post) => !post.data.draft || (import.meta.env.DEV && post.data.preview))
     .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 }
 

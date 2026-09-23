@@ -19,6 +19,7 @@ const { Content } = await render(post);
 <BlogLayout title={post.data.title} description={post.data.summary} posts={posts} article>
   <article class="blog-article">
     <header>
+    {post.data.draft && <p class="blog-post-meta">Prévia local · texto em revisão</p>}
     <p class="blog-post-meta">
       <time datetime={post.data.pubDate.toISOString().slice(0, 10)}>{formatBlogDate(post.data.pubDate)}</time>
       {post.data.category && <> · <a href={blogGroupURL(`categoria/${topicSlug(post.data.category)}`)}>{post.data.category}</a></>}
