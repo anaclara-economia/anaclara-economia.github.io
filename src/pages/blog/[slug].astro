@@ -14,6 +14,12 @@ export async function getStaticPaths() {
 
 const { post, posts } = Astro.props as { post: CollectionEntry<"blog">; posts: CollectionEntry<"blog">[] };
 const { Content } = await render(post);
+// Estimativa editorial de 200 palavras por minuto, sem marcação ou URLs.
+const readingText = (post.body ?? "")
+  .replace(/<[^>]*>/g, " ")
+  .replace(/!?\[([^\]]*)\]\([^)]*\)/g, "$1")
+  .replace(/https?:\/\/\S+/g, " ");
+const readingMinutes = Math.max(1, Math.ceil((readingText.match(/[\p{L}\p{N}]+/gu)?.length ?? 0) / 200));
 ---
 
 <BlogLayout title={post.data.title} description={post.data.summary} posts={posts} article>
@@ -23,6 +29,10 @@ const { Content } = await render(post);
     <p class="blog-post-meta">
       <time datetime={post.data.pubDate.toISOString().slice(0, 10)}>{formatBlogDate(post.data.pubDate)}</time>
       {post.data.category && <> · <a href={blogGroupURL(`categoria/${topicSlug(post.data.category)}`)}>{post.data.category}</a></>}
+      <span class="reading-time" role="img" aria-label={`Tempo estimado de leitura: ${readingMinutes} minutos`} title={`Leitura estimada: ${readingMinutes} minutos`}>
+        <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>
+        <span aria-hidden="true">{readingMinutes}</span>
+      </span>
     </p>
     <h1>{post.data.title}</h1>
     {post.data.tags.length > 0 && <ul class="blog-tag-list" aria-label="Tags do texto">
@@ -33,3 +43,7 @@ const { Content } = await render(post);
     <footer class="blog-article-footer"><a href="/blog/">← Voltar ao blog</a></footer>
   </article>
 </BlogLayout>
+
+<style>
+  .reading-time { display: inline-flex; align-items: center; gap: 0.3rem; margin-left: 0.8rem; vertical-align: middle; white-space: nowrap; }
+</style>
