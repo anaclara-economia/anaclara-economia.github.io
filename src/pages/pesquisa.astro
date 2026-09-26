@@ -28,14 +28,14 @@ const anais = pesquisas.filter((item) => item.data.kind === "anais");
   <section id="working-papers" class="panel research-section">
     <h2>Working papers</h2>
     <div class="publication-stack">
-      {workingPapers.map((item) => <PublicationItem title={item.data.title} authors={item.data.authors!} venue={item.data.venue!} year={item.data.year} summary={item.data.summary!} pageUrl={item.data.pageUrl} pdfUrl={item.data.pdfUrl} pages={item.data.pages} />)}
+      {workingPapers.map((item) => <PublicationItem title={item.data.title} authors={item.data.authors!} venue={item.data.venue!} year={item.data.year} summary={item.data.summary!} pageUrl={item.data.pageUrl} pageLabel={item.data.pageLabel} pdfUrl={item.data.pdfUrl} pages={item.data.pages} />)}
     </div>
   </section>
 
   <section id="anais" class="panel research-section">
     <h2>Publicações em anais</h2>
     <div class="publication-stack">
-      {anais.map((item) => <PublicationItem title={item.data.title} authors={item.data.authors!} venue={item.data.venue!} year={item.data.year} summary={item.data.summary!} pageUrl={item.data.pageUrl} pdfUrl={item.data.pdfUrl} pages={item.data.pages} />)}
+      {anais.map((item) => <PublicationItem title={item.data.title} authors={item.data.authors!} venue={item.data.venue!} year={item.data.year} summary={item.data.summary!} pageUrl={item.data.pageUrl} pageLabel={item.data.pageLabel} pdfUrl={item.data.pdfUrl} pages={item.data.pages} />)}
     </div>
   </section>
 

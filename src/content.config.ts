@@ -28,6 +28,7 @@ const pesquisas = defineCollection({
     venue: z.string().optional(),
     summary: z.string().optional(),
     pageUrl: z.string().url().optional(),
+    pageLabel: z.string().optional(),
     pdfUrl: z.string().url().optional(),
     pages: z.string().optional(),
     featured: z.boolean().default(false),
