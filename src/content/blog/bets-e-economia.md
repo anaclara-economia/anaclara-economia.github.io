@@ -10,9 +10,9 @@ preview: false
 
 Ana Clara Cabral ·
 
-Em um evento com artistas na Fundição Progresso, no Rio de Janeiro, em 23 de setembro, o presidente Lula afirmou que teria “imenso prazer de acabar com as bets”. Segundo a <a href="https://economia.uol.com.br/noticias/reuters/2026/09/24/lula-diz-que-tera-prazer-em-acabar-com-bets-no-brasil.htm" target="_blank" rel="noopener noreferrer">Reuters</a>, o governo discutia uma medida provisória para restringir a atuação das plataformas. A reportagem menciona uma proposta de proibição dos cassinos e jogos online, preservando as apostas esportivas. Lula também respondeu à reação dos clubes de futebol, grandes beneficiários dos patrocínios do setor.
+Em 25 de setembro de 2026, o presidente Lula editou uma medida provisória que proíbe a exploração, a oferta, a intermediação e a publicidade de apostas de quota fixa no Brasil, as chamadas bets. Segundo o <a href="https://www.gov.br/saude/pt-br/assuntos/noticias-ms/2026/setembro/presidente-lula-assina-medida-provisoria-que-proibe-as-bets-no-brasil" target="_blank" rel="noopener noreferrer">Ministério da Saúde</a>, a medida abrange apostas esportivas e jogos online, em ambientes físicos e virtuais, inclusive sob autorizações estaduais e distritais. As demais modalidades lotéricas autorizadas em lei ficam fora dessa proibição.
 
-As declarações ocorreram durante a campanha à reeleição e em meio a discussões sobre arrecadação e possíveis disputas judiciais. Na cobertura consultada, os termos da medida ainda estavam em discussão. Esse contexto ajuda a situar o debate, que envolve tanto as receitas das plataformas e seus patrocinados quanto os recursos comprometidos pelas famílias.
+O cronograma divulgado pelo ministério prevê a suspensão de novos aportes desde 25 de setembro, a retirada voluntária dos saldos até 5 de outubro e a saída dos sites e aplicativos do ar a partir de 6 de outubro. A decisão coloca em debate os custos econômicos das apostas: além das receitas das plataformas e dos tributos recolhidos, importa compreender seus efeitos sobre o orçamento das famílias, o consumo e a poupança.
 
 Pesquisas no Brasil e em outros países vêm examinando essas relações. Este texto reúne alguns de seus resultados, com foco em poupança, endividamento, consumo e contas públicas. Os estudos abrangem modalidades distintas de jogo e permitem observar diferentes partes do problema.
 
@@ -76,4 +76,4 @@ Magini, G. K.; Bortoluzzo, A. B.; Bortoluzzo, M. M. (2026). <a href="https://doi
 
 Klein, G. (2026). <a href="https://madeusp.com.br/2026/08/o-custo-economico-das-bets-efeitos-sobre-pib-arrecadacao-e-desigualdade/" target="_blank" rel="noopener noreferrer">O custo econômico das bets: efeitos sobre PIB, arrecadação e desigualdade</a>. Blog do MADE/USP, 24 de agosto.
 
-Reuters (2026). <a href="https://economia.uol.com.br/noticias/reuters/2026/09/24/lula-diz-que-tera-prazer-em-acabar-com-bets-no-brasil.htm" target="_blank" rel="noopener noreferrer">Lula diz que terá prazer em acabar com bets no Brasil</a>. UOL, 24 de setembro.
+Ministério da Saúde (2026). <a href="https://www.gov.br/saude/pt-br/assuntos/noticias-ms/2026/setembro/presidente-lula-assina-medida-provisoria-que-proibe-as-bets-no-brasil" target="_blank" rel="noopener noreferrer">Presidente Lula assina Medida Provisória que proíbe as bets no Brasil</a>. 25 de setembro.
