@@ -1,6 +1,6 @@
 ---
 title: "Bets e economia: o que os estudos mostram sobre poupança, endividamento e consumo"
-pubDate: 2026-09-24
+pubDate: 2026-09-26
 summary: "Evidências brasileiras e internacionais sobre as finanças das famílias e os possíveis efeitos econômicos das apostas on-line."
 category: "Economia"
 tags: ["Bets", "Finanças das famílias", "Política econômica"]
