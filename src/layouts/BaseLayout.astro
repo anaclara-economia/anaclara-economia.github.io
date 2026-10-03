@@ -16,11 +16,11 @@ const { title, description = "Site pessoal acadêmico em Economia Aplicada.", si
   Astro.props;
 const pageTitle =
   title === "Início"
-    ? "Ana Clara Cabral - Economia Aplicada"
+    ? "EconData | Ana Clara Cabral"
     : `${title} - Ana Clara Cabral`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
-const shareImageURL = new URL("/capa-compartilhamento.png", Astro.site ?? Astro.url.origin);
-const shareImageAlt = "Ana Clara Cabral — Economia Aplicada, Ciência de dados e Política econômica.";
+const shareImageURL = new URL("/econdata-compartilhamento.png", Astro.site ?? Astro.url.origin);
+const shareImageAlt = "EconData — Consultoria acadêmica e análise de dados. Ana Clara Cabral.";
 const currentYear = new Date().getFullYear();
 const hasSidebar = sidebarItems.length > 0 || Astro.slots.has("sidebar");
 ---

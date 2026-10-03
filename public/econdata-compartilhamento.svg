@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">EconData — Ana Clara Cabral</title>
+  <desc id="desc">Consultoria acadêmica e análise de dados.</desc>
+  <rect width="1200" height="630" fill="#f5f0e6"/>
+  <g fill="none" stroke-width="2.5">
+    <path d="M1020 -30C940 105 1220 130 1120 315S960 490 1030 660" stroke="#173f38"/>
+    <path d="M1070 -30C990 105 1270 130 1170 315S1010 490 1080 660" stroke="#b96c50"/>
+    <path d="M1120 -30C1040 105 1320 130 1220 315S1060 490 1130 660" stroke="#173f38"/>
+  </g>
+  <text x="96" y="300" font-family="Georgia, 'Times New Roman', serif" font-size="116" font-weight="700" letter-spacing="-4" fill="#173f38">EconData</text>
+  <text x="100" y="368" font-family="'Segoe UI', Arial, sans-serif" font-size="32" fill="#173f38">Consultoria acadêmica e análise de dados</text>
+  <text x="102" y="432" font-family="'Segoe UI', Arial, sans-serif" font-size="25" letter-spacing="4" fill="#995237">Ana Clara Cabral</text>
+</svg>
