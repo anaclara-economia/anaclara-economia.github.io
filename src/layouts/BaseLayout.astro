@@ -16,11 +16,12 @@ const { title, description = "Site pessoal acadêmico em Economia Aplicada.", si
   Astro.props;
 const pageTitle =
   title === "Início"
-    ? "EconData | Ana Clara Cabral"
+    ? "Ana Clara Cabral - Economia Aplicada"
     : `${title} - Ana Clara Cabral`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
-const shareImageURL = new URL("/econdata-compartilhamento.png", Astro.site ?? Astro.url.origin);
-const shareImageAlt = "EconData — Consultoria acadêmica e análise de dados. Ana Clara Cabral.";
+const shareImageURL = new URL("/capa-compartilhamento.png", Astro.site ?? Astro.url.origin);
+const shareImageAlt = "Ana Clara Cabral — Economia Aplicada, Ciência de dados e Política econômica.";
+const showShareImage = title !== "Início";
 const currentYear = new Date().getFullYear();
 const hasSidebar = sidebarItems.length > 0 || Astro.slots.has("sidebar");
 ---
@@ -37,18 +38,22 @@ const hasSidebar = sidebarItems.length > 0 || Astro.slots.has("sidebar");
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content={description} />
+    {showShareImage && <meta property="og:description" content={description} />}
     <meta property="og:url" content={canonicalURL} />
+    {showShareImage && <>
     <meta property="og:image" content={shareImageURL} />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={shareImageAlt} />
-    <meta name="twitter:card" content="summary_large_image" />
+    </>}
+    <meta name="twitter:card" content={showShareImage ? "summary_large_image" : "summary"} />
     <meta name="twitter:title" content={pageTitle} />
+    {showShareImage && <>
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={shareImageURL} />
     <meta name="twitter:image:alt" content={shareImageAlt} />
+    </>}
     <title>{pageTitle}</title>
   </head>
   <body>

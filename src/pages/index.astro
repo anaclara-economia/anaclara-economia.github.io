@@ -10,23 +10,11 @@ const trabalhos = (await getCollection("pesquisas"))
 
 <BaseLayout
   title="Início"
-  description="EconData — Consultoria acadêmica e análise de dados. Conheça a trajetória, as pesquisas e os textos de Ana Clara Cabral."
+  description="Economia Aplicada, ciência de dados e política econômica. Pesquisas e análises de Ana Clara Cabral."
 >
-  <section class="econdata-masthead" aria-labelledby="econdata-title">
-    <img class="econdata-portrait" src="/ana-clara-cabral-perfil.png" alt="Retrato de Ana Clara Cabral" width="1254" height="1254" />
-    <div class="econdata-masthead-copy">
-      <h1 id="econdata-title">EconData</h1>
-      <p class="econdata-description">Consultoria acadêmica e análise de dados</p>
-    </div>
-    <svg class="econdata-rivers" viewBox="0 0 180 360" fill="none" aria-hidden="true" focusable="false">
-      <path d="M40 -20C-5 70 210 80 135 195S30 280 55 380" />
-      <path class="econdata-river-accent" d="M76 -20C30 68 242 84 168 204S64 284 89 380" />
-      <path d="M116 -20C75 74 279 88 207 212S105 292 130 380" />
-    </svg>
-  </section>
   <section class="home-profile">
     <div>
-      <h2 class="profile-name">Ana Clara Cabral</h2>
+      <h1>Ana Clara Cabral</h1>
       <p class="profile-kicker">Economia Aplicada · Ciência de dados · Política econômica</p>
       <ul class="about-links" aria-label="Perfis acadêmicos">
         <li><a href="https://lattes.cnpq.br/9701201405869987" target="_blank" rel="noopener noreferrer">Lattes</a></li>
@@ -45,6 +33,9 @@ const trabalhos = (await getCollection("pesquisas"))
         Escolhas e integrante do LAPED/CNPq. Atua com pesquisa econômica quantitativa,
         desenvolvimento regional, análise de dados e uso crítico de agentes de IA.
       </p>
+    </div>
+    <div class="profile-media">
+      <img src="/ana-clara-cabral-perfil.png" alt="Retrato de Ana Clara Cabral" width="1254" height="1254" />
     </div>
   </section>
 
