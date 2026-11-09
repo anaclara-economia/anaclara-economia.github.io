@@ -1,6 +1,6 @@
 ---
 title: Sobre
-updatedAt: 2026-09-16
+updatedAt: 2026-11-08
 ---
 
 ## Formação e atuação
@@ -58,6 +58,15 @@ Na especialização, desenvolve projeto de pesquisa com dados da <a href="https:
 </details>
 
 ## Formação complementar
+
+<details class="academic-details">
+<summary>Perícia e Assistência Técnica Econômico-Financeira, Mediação e Arbitragem — Corecon-PR <span class="academic-period">ago.–out. 2026</span></summary>
+
+*Carga horária: 84 horas.*
+
+Curso promovido pelo Corecon-PR em parceria com o SINDECON-PR, com conteúdos de finanças aplicadas à perícia, formação de índices, perícia cível e bancária, elaboração de laudos, cálculos trabalhistas e PJe-Calc, recuperação judicial, avaliação de empresas, mediação e arbitragem.
+
+</details>
 
 <details class="academic-details">
 <summary>Curso de Modelagem Macroeconômica — UFMT <span class="academic-period">maio–jun. 2025</span></summary>
