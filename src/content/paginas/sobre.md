@@ -1,11 +1,11 @@
 ---
 title: Sobre
-updatedAt: 2026-11-08
+updatedAt: 2026-11-25
 ---
 
 ## Formação e atuação
 
-Ana Clara Cabral é economista (CORECON-PA/AP nº 41301), formada pela Universidade Federal do Pará e especialista em Gestão e Análise Estratégica de Dados pela PUC Minas. É mestranda do Programa de Pós-Graduação em Economia Aplicada (PPGEA/UFPA), na modalidade profissional, e cursa especialização em Gestão na Educação Profissional e Tecnológica no Instituto Federal do Pará.
+Ana Clara Cabral é economista (CORECON-PA/AP nº 04301), formada pela Universidade Federal do Pará e especialista em Gestão e Análise Estratégica de Dados pela PUC Minas. É mestranda do Programa de Pós-Graduação em Economia Aplicada (PPGEA/UFPA), na modalidade profissional, e cursa especialização em Gestão na Educação Profissional e Tecnológica no Instituto Federal do Pará.
 
 É pesquisadora bolsista da <a href="https://escolhas.org/catedra/" target="_blank" rel="noopener noreferrer">Cátedra Escolhas de Economia e Meio Ambiente – Instituto Escolhas</a> e integra o <a href="https://www.olaped.com.br/" target="_blank" rel="noopener noreferrer">Laboratório de Política Econômica e Desenvolvimento Produtivo (LAPED/CNPq)</a>.
 
